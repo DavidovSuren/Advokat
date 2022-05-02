@@ -1,0 +1,202 @@
+<html>
+
+<head>
+    <title>Адвокат</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background-color: #37474f;
+            text-align: center;
+            background-image: url(ADV.webp); /* Путь к фоновому изображению */
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Roboto&display=swap');
+
+        h1 {
+            font-family: 'Merriweather', serif;
+            color: #fff;
+            font-size: 2em;
+            text-align: left;
+            display: block;
+        }
+        header {padding-bottom: 2%; text-align: left; padding: 2% 2% 0 2%;}
+        
+        p,
+        ul {
+            font-family: 'Roboto', sans-serif;
+            color: #fff;
+            max-width: 80%;
+            margin: auto;
+            padding: 20px;
+            text-align: left;
+        }
+
+        .container {
+            margin: 1%;
+            background: #62717beb;
+            max-width: 999px;
+            margin: auto;
+        }
+
+        .drive {
+            color: #fff;
+            font-size: small;
+            
+        }
+
+        img {
+            width: 100%;
+        }
+        .check-list {
+        margin: 0;
+        padding-left: 1.2rem;
+        }
+
+        .check-list li {
+        position: relative;
+        list-style-type: none;
+        padding-left: 2.0rem;
+        margin-bottom: 0.5rem;
+        }
+
+        .check-list li:before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            top: -2px;
+            width: 5px;
+            height: 11px;
+            border-width: 0 2px 2px 0;
+            border-style: solid;
+            border-color: #47295e;
+            transform-origin: bottom left;
+            transform: rotate(45deg);
+        }
+        .field {margin: auto;
+            width: 80%;
+            padding: 2%;
+            border-bottom: 4px solid red;
+            border: none;
+            border-bottom-color: currentcolor;
+            border-bottom-style: none;
+            border-bottom-width: medium;
+            border-bottom: 1px solid #37474f;
+            background: #5e6e77;
+            box-shadow: 0px 0px 2px 3px  #37474f22 ;
+            margin: 2%;
+            color:#fff
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Адвокат коллегии адвокатов СК «Бондяков и Партнёры»
+            </h1>
+            <small class="drive"> Оказание юридических услуг различного правового характера </small>
+
+    
+        </header>
+        
+        <hr>
+        <ul class="check-list">
+            <li>
+                Представление интересов по гражданским и административным делам
+            </li>
+            <li>
+                Представление интересов потерпевших на стадии предварительного следствия и в суде
+            </li>
+            <li>Защита интересов обвиняемых\подозреваемых на стадии предварительного следствия и в суде </li>
+            <li> подготовка документов различного правового характера ( заявление ,жалобы, ходатайство, составление
+            договоров, уставов организации и т.д)
+            </li>
+        </ul>
+        <img src="DA.webp" alt="">
+        <p> Я окончила университет морского и речного флота в г.Санкт-Петербурге, по специальности юриспруденция
+            (морское право). Соответственно вопросы, в том числе проблемные, связанные с осуществлением перевозок
+            морским и речным флотом, с точки зрения Российского и международного законодательства мне известны.<br />
+            Затем окончила университет СКФУ по направления уголовная юстиция.<br />
+            На протяжении длительного времени проходила службу в следственных органах МВД России по Ставропольскому
+            краю, осуществляя расследование уголовных дел различной степени сложности, в том числе экономических
+            преступлений.<br />
+        </p>
+        <hr>
+        <p> В настоящее время сферой моей деятельности является адвокатура.<br />
+            Я готова защищать Ваши права и законные интересы как в уголовных процессах, так и осуществлять представление
+            интересов в суде по гражданско-правовым и административным спорам. <br />
+            Территория моей трудовой деятельности не ограничена пределами г.Кисловодска, поэтому для всех я 24/7
+            нахожусь на связи, в любой момент готова проконсультировать по всем интересующим вопросам, а также совместно
+            с вами разработать стратегию и определить пути решения Ваших проблем!<br />
+            С Уважением , Арцыбашева Д.Д.
+        </p>
+        <hr>
+        <form id="my-form" action="https://formspree.io/f/mqkngdra" method="POST">
+            <label style="color:#fdfcfd">Email:</label> <br>
+            <input class="field" type="email" name="email" /> <br>
+            <label style="color:#fdfcfd;">Текст:</label> <br>
+            <textarea class="field" type="text" name="message">
+            </textarea>
+            <button class="field" id="my-form-button">Отправить</button>
+            <p id="my-form-status"></p> <br>
+        </form>
+        <img src="VI.webp" alt="">
+
+    </div>
+                                 
+    </section>
+    <section>
+                                    <!-- Place this script at the end of the body tag -->
+                                    <script>
+                                        var form = document.getElementById("my-form");
+
+                                        async function handleSubmit(event) {
+                                            event.preventDefault();
+                                            var status = document.getElementById("my-form-status");
+                                            var data = new FormData(event.target);
+                                            fetch(event.target.action, {
+                                                method: form.method,
+                                                body: data,
+                                                headers: {
+                                                    'Accept': 'application/json'
+                                                }
+                                            }).then(response => {
+                                                if (response.ok) {
+                                                    status.innerHTML = "Thanks for your submission!";
+                                                    form.reset()
+                                                } else {
+                                                    response.json().then(data => {
+                                                        if (Object.hasOwn(data, 'errors')) {
+                                                            status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+                                                        } else {
+                                                            status.innerHTML = "Oops! There was a problem submitting your form"
+                                                        }
+                                                    })
+                                                }
+                                            }).catch(error => {
+                                                status.innerHTML = "Oops! There was a problem submitting your form"
+                                            });
+                                        }
+                                        form.addEventListener("submit", handleSubmit)
+                                    </script>
+    </section>
+
+
+    <footer class="u-align-center u-clearfix u-footer u-palette-5-dark-3 u-footer" id="sec-8a9e">
+        <div class="u-clearfix u-sheet u-sheet-1">
+        </div>
+    </footer>
+    <section class="u-backlink u-clearfix u-grey-80">
+        <a class="u-link" href="https://omvu.ru/" target="_blank">
+            <span style="color:#fff">OMVU 2022</span>
+        </a>
+    </section>
+    </div>
+
+</body>
+
+</html>
